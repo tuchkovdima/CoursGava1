@@ -1,3 +1,5 @@
+package FistLessons;
+
 public class ImmuttableClass { //объекты не изменяемы
 
     private final String name;

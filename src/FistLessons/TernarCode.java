@@ -1,3 +1,5 @@
+package FistLessons;
+
 public class TernarCode {
     public static void main(String[] args) {
          boolean passIsValid = true;

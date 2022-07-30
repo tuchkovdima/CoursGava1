@@ -1,3 +1,5 @@
+package FistLessons;
+
 public class CoffeMachine {
     public static void main(String[] args) {
 
