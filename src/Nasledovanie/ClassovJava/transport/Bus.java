@@ -1,14 +1,28 @@
-package Nasledovanie.ClassovJava;
+package Nasledovanie.ClassovJava.transport;
+
+import java.util.Objects;
 
 public class Bus {
 
     private double tankFullnessRate; // число, на сколько заполнен топливный бак 0-1
-    private final double consumptionRate; // расход топлива на 1 км
+    protected  double consumptionRate; // расход топлива на 1 км
 
     //колличество созданных автобусов
     private static int count;
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; // проверка на равенство ссылок
+        if (o == null || getClass() != o.getClass()) return false;
+        Bus bus = (Bus) o;
+        return Double.compare(bus.tankFullnessRate, tankFullnessRate) == 0 && Double.compare(bus.consumptionRate, consumptionRate) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tankFullnessRate, consumptionRate);
+    }
 
     public Bus(double consumptionRate) { //конструктор
         this.consumptionRate = consumptionRate;
@@ -38,13 +52,20 @@ public class Bus {
         tankFullnessRate -= distance * consumptionRate;
         return true;
     }
-    public final void refuel (double tankRate){ // заправка
+    public  void refuel (double tankRate){ // заправка
         double total = tankFullnessRate + tankRate;
         tankFullnessRate = total > 1 ? 1 : total;
     }
-    public int powerReserve(){ // на какое колличество килома\етров хватит оставшегося запаса топлива
+    protected int powerReserve(){ // на какое колличество килома\етров хватит оставшегося запаса топлива
         return (int) (tankFullnessRate / consumptionRate);
     }
 
 
+    @Override
+    public String toString() { //возвращает строковое представлениме объекта
+        return "Bus{" +
+                "tankFullnessRate=" + tankFullnessRate +
+                ", consumptionRate=" + consumptionRate +
+                '}';
+    }
 }

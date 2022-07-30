@@ -1,5 +1,8 @@
 package Nasledovanie.ClassovJava;
 
+import Nasledovanie.ClassovJava.transport.Bus;
+import Nasledovanie.ClassovJava.transport.ElectricBus;
+
 public class Main {
     public static void main(String[] args) {
         //задача на основе кода по автобусам наследовать для электробуса
