@@ -5,6 +5,13 @@ import Nasledovanie.ClassovJava.transport.ElectricBus;
 
 public class Main {
     public static void main(String[] args) {
+
+        ElectricBus electricBus2 = new ElectricBus(0.002, 0.4) ;
+
+        Bus bus4 = new ElectricBus(1,5);
+
+
+
         //задача на основе кода по автобусам наследовать для электробуса
         ElectricBus bus = new ElectricBus(0.001, 0.1);
         //заполняем до ста процентов
