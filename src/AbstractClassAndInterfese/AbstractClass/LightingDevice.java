@@ -11,6 +11,9 @@ public abstract class LightingDevice implements ElectricDevice, Comparable {
         this.power = power;
 
     }
+    public int getPower(){
+        return power;
+    }
     public int compareTo(Object o) {
         LightingDevice device = (LightingDevice) o;
         return Integer.compare(power, device.power);

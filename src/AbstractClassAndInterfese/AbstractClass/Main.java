@@ -19,5 +19,9 @@ public class Main {
         for (Lamp lamp : lamps){
             System.out.println(lamp);
         }
+        Lamp lamp = new Lamp(100);
+        lamp.setType(Lamp.Type.LED);
     }
+
+
 }

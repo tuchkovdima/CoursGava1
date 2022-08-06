@@ -9,6 +9,20 @@ public class Chandelier extends LightingDevice {
 
     private final int lampsCount;
 
+    private Contrller contrller;
+
+    private class Contrller { //внутренний не ствтический класс
+        public void reset() {
+            //some logic
+        }
+    }
+
+    public Chandelier(int power, int lampsCount) {
+        super(power);
+        this.lampsCount = lampsCount;
+        contrller = new Contrller();
+
+    }
 
     public int getPower() {
         return power;
@@ -29,6 +43,9 @@ public class Chandelier extends LightingDevice {
         int stepsCount = (int) Math.round(level / step);
         brightness = stepsCount * step;
         super.setBrightness(stepsCount * step);
+        if (brightness == 0) {
+            contrller.reset();
+        }
     }
 
     @Override
@@ -36,9 +53,5 @@ public class Chandelier extends LightingDevice {
         return power * Math.pow(brightness, CONSUMPTION_COEFF);
     }
 
-    public Chandelier(int power, int lampsCount) {
-        super(power);
-        this.lampsCount = lampsCount;
 
-    }
 }
