@@ -26,12 +26,6 @@ public class Main
             System.out.println("Вы запросили не существующий элемент массива");
         }
 
-
-
-
-
-
-
         Scanner scanner = new Scanner(System.in);
         CustomerStorage executor = new CustomerStorage();
         for(;;) {

@@ -2,7 +2,6 @@ package Generics;
 
 import java.util.List;
 
-import static sun.net.InetAddressCachePolicy.get;
 
 public class Calulator {
     // список получает все что угодно, что отнаследованено от намбера преобразует в добл суммируеет и возвращает
