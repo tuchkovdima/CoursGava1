@@ -1,21 +1,25 @@
-package ManyStream;
+package ManyStream.Thread;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
-// уменьшение формата файла
-public class Main {
-    public static void main(String[] args) {
-        String srcFolder = "/Users/Dima/Desktop/CoursGava/src";
-        String dstFolder = "/Users/Dima/Desktop/CoursGava/src";
+//обработка файлов в отдельном потоке
+public class Runable implements Runnable{
+    private File[] files;
+    private  int newWidth;
+    private String dstFolder;
+    private long start;
 
-        File srcDir = new File(srcFolder);
+    public Runable(File[] files, int newWidth, String dstFolder, long start) {
+        this.files = files;
+        this.newWidth = newWidth;
+        this.dstFolder = dstFolder;
+        this.start = this.start;
+    }
 
-        long start = System.currentTimeMillis();
-        File[] files = srcDir.listFiles();
 
+    @Override
+    public void run(){
         try {
             for (File file:files){
                 BufferedImage image = ImageIO.read(file);
@@ -44,6 +48,6 @@ public class Main {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        System.out.println("Duration" + (System.currentTimeMillis() - start));
+        System.out.println("Finish" + (System.currentTimeMillis() - start) + "mc");
     }
 }
