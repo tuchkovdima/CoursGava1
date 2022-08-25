@@ -1,3 +1,5 @@
+package SynhronizeMetod;
+
 import java.util.ArrayList;
 
 public class SynhronizeMetod {
