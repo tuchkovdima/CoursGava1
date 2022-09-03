@@ -27,18 +27,26 @@ public class ArrayListMetods5 {
 //        boolean result = list1.containsAll(list2);
 //        System.out.println(result);
 
-        //subList делает отрывок из листа
-        List<String> myList = list1.subList(1,4);
-        System.out.println(myList);
+//        //subList делает отрывок из листа
+//        List<String> myList = list1.subList(1,4);
+//        System.out.println(myList);
+//
+//        //toArray из нашего ArrayList получаем массив  типа Object
+//        Object[]  array = list1.toArray();
+//        // если хотим полчить массив String, а не Object
+//        String[]  array2 = list1.toArray(new String[0]); //0 и не думаем о размере массива
+//
+//        for (String s:array2){
+//            System.out.println(s);
+//        }
 
-        //toArray из нашего ArrayList получаем массив  типа Object
-        Object[]  array = list1.toArray();
-        // если хотим полчить массив String, а не Object
-        String[]  array2 = list1.toArray(new String[0]); //0 и не думаем о размере массива
+       List<Integer> list2 = List.of(3,8,13);//солздали лист и добавили элементы без метода add (нельзя модифицировать)
+        System.out.println(list2);
 
-        for (String s:array2){
-            System.out.println(s);
-        }
+        List<String> list3 = List.copyOf(list1); //(нельзя модифицировать) не могут содержать null
+        System.out.println(list3);
+
+
 
     }
 }
