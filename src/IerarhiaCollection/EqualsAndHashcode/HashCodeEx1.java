@@ -26,6 +26,12 @@ public class HashCodeEx1 {
         System.out.println("result = " + result);
 
         System.out.println(st1.hashCode());
+
+        for (Map.Entry<Student, Double> entry: map.entrySet()) {
+            System.out.println(entry.getKey()+ ":" +  entry.getValue());
+        }
+        Map<Integer, String> map2 = new HashMap<>(16, 0.75f);
+
     }
 }
 class Student{
